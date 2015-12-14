@@ -1,0 +1,27 @@
+<html>
+<head><title>Assignment #1</title></head>
+
+<body>
+
+<h1>CS 361 Software Assignment # 1</h1>
+<p><i>Amer Nour Eddin, Std# 213171245</i></p>
+
+<p>
+    <b>Name: {{ article_name }}</b>
+</p>
+
+<p>
+    <b>Words:</b>
+</p>
+
+{% for word, count in c%}
+
+    <p>{{ word }} , {{ count }}</p>
+
+{% endfor %}
+
+
+</body>
+
+</html>
+
