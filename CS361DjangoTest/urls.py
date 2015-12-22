@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^histogram/(?P<offset>\w+)/$', word_count),
     url(r'^histogram/software/$', word_count),
     url(r'^histogram/physics/$', word_count),
+
 ]

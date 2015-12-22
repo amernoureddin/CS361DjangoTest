@@ -2,6 +2,7 @@
 from django.template.loader import get_template, render_to_string
 from django.http import Http404, HttpResponse
 from django.template import Template, Context
+from django.shortcuts import render_to_response
 import datetime
 import re
 
@@ -9,13 +10,13 @@ import re
 def hello(request):
     return HttpResponse('Hello World')
 
-
+'''
 def current_datetime(request):
     now = datetime.datetime.now()
     t = Template("<html><body>It's {{ current_date }}.</body></html>")
     html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
-
+'''
 '''
 def current_datetime(request):
     now = datetime.datetime.now()
@@ -24,6 +25,11 @@ def current_datetime(request):
 '''
 
 
+def current_datetime(request):
+    now = datetime.datetime.now()
+    return render_to_response('current_datetime.html', locals())
+
+'''
 def hours_ahead(request, offset):
     try:
         offset = int(offset)
@@ -32,6 +38,16 @@ def hours_ahead(request, offset):
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
     html = '<html><body>In %s hour(s), it’ll be %s.</body></html>' % (offset, dt)
     return HttpResponse(html)
+'''
+
+
+def hours_ahead(request, offset):
+    try:
+        offset = int(offset)
+    except ValueError:
+        raise Http404
+    dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
+    return render_to_response('hours_ahead.html', locals())
 
 
 # Assignment 1 #
@@ -54,3 +70,6 @@ def word_count(request, offset):
     t = get_template('Main_Assignment_#1.html')
     html = t.render(Context({'c': count.items(), 'article_name': offset}))
     return HttpResponse(html)
+
+
+# End Assignment 1
