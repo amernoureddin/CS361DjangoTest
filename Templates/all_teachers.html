@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Teachers</title>
+</head> 
+<body>
+ <h1>Teachers</h1>
+ <ul> {% for teacher in teacher_list %} 
+    <li><b>First name:</b>{{ teacher.first_name }}||<b>Last name:</b> {{ teacher.last_name }}||
+        <b>Office:</b>{{ teacher.office }}||<b>Phone:</b>{{ teacher.phone }}||<b>Email:</b> {{ teacher.email }}</li> 
+{% endfor %} 
+</ul> 
+</body>
+</html>

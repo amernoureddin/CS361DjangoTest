@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from django.db import models
 
 
@@ -59,12 +60,16 @@ class Course(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20)
     classroom = models.CharField(max_length=100)
-    times = models.DateTimeField()
-    teacher = models.ForeignKey(Teacher)
-    student = models.ManyToManyField(Student)
+    times = models.CharField(max_length=100)
+    teacher = models.ForeignKey(Teacher, blank=True, null=True)
+    students = models.ManyToManyField(Student, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
 
+
+# class StudentToCourse(models.Model):
+#     student = models.ForeignKey(Student)
+#     courses = models.ManyToManyField(Course)
 
 # End Assignment 2 #

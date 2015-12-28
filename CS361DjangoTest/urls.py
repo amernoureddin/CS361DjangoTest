@@ -19,7 +19,7 @@ from django.contrib import admin
 # from django.conf.urls.defaults import *
 
 from CS361DjangoTest.views import hello, current_datetime
-from CS361DjangoTest.views import hours_ahead, word_count
+from CS361DjangoTest.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,5 +29,22 @@ urlpatterns = [
     url(r'^histogram/(?P<offset>\w+)/$', word_count),
     url(r'^histogram/software/$', word_count),
     url(r'^histogram/physics/$', word_count),
+    url(r'^meta/$', display_meta),
+    url(r'^search-form/$', search_form),
+    url(r'^search/$', search),
+    url(r'^contact-form/$', contact_form),
+    url(r'^contact/$', contact),
+    url(r'^contactV2/$', contact_formsframework),
+    url(r'^contact/thanks/$', hello),
+    url(r'^addauthor/$', addauthor),
+    url(r'^all-authors/$', all_authors),
+    url(r'^addstudent/$', addstudent),
+    url(r'^all-students/$', all_students),
+    url(r'^addteacher/$', addteacher),
+    url(r'^all-teachers/$', all_teachers),
+    url(r'^addcourse/$', addcourse),
+    url(r'^all-courses/$', all_courses),
+    url(r'^enrollstudent/$', enrollstudent),
+    url(r'^all-c-f-s/(?P<code>.+)/$', all_courses_for_student)
 
 ]

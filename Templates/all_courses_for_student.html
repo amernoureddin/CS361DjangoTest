@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>The Student Courses</title>
+</head> 
+<body>
+ <h1>The Student Courses</h1>
+{{ course.name }}/{{ course.code }}
+ <ul> {% for i in course.students.all %} 
+    <li>{{ i.first_name }}{{ i.last_name }}</li> 
+{% endfor %} 
+</ul> 
+</body>
+</html>
