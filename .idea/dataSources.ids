@@ -33,19 +33,19 @@
       <column name="name" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="code" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="classroom" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="times" sqlType="BIGINT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="times" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="teacher_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_CS361DjangoTest_course_1" columns="teacher_id" ref-table="CS361DjangoTest_teacher" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="CS361DjangoTest_course_d9614d40" unique="true" columns="teacher_id"/>
     </table>
-    <table name="CS361DjangoTest_course_student" schema="" catalog="" type="TABLE">
+    <table name="CS361DjangoTest_course_students" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="course_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="student_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_CS361DjangoTest_course_student_1" columns="student_id" ref-table="CS361DjangoTest_student" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_CS361DjangoTest_course_student_2" columns="course_id" ref-table="CS361DjangoTest_course" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_CS361DjangoTest_course_students_1" columns="student_id" ref-table="CS361DjangoTest_student" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_CS361DjangoTest_course_students_2" columns="course_id" ref-table="CS361DjangoTest_course" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
     </table>
     <table name="CS361DjangoTest_publisher" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -69,8 +69,8 @@
       <column name="first_name" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="last_name" sqlType="VARCHAR(40)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="office" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR(15)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="auth_group" schema="" catalog="" type="TABLE">

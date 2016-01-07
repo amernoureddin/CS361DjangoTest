@@ -1,13 +1,30 @@
+{% load staticfiles %}
 <html>
 <head>
+
+<link rel="stylesheet" href="{% static 'css/table.css' %}" />
+
+
     <title>Teachers</title>
 </head> 
 <body>
  <h1>Teachers</h1>
+<table border="1" style="width:40%">
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+  </tr>
  <ul> {% for teacher in teacher_list %} 
-    <li><b>First name:</b>{{ teacher.first_name }}||<b>Last name:</b> {{ teacher.last_name }}||
-        <b>Office:</b>{{ teacher.office }}||<b>Phone:</b>{{ teacher.phone }}||<b>Email:</b> {{ teacher.email }}</li> 
+  <tr>
+    <td>{{ teacher.first_name }}</td>
+    <td>{{ teacher.last_name }}</td>
+    <td>{{ teacher.email }}</td>
+  </tr>
+
 {% endfor %} 
 </ul> 
+</table>
+
 </body>
 </html>

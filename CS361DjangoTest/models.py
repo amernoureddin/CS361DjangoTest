@@ -62,7 +62,7 @@ class Course(models.Model):
     classroom = models.CharField(max_length=100)
     times = models.CharField(max_length=100)
     teacher = models.ForeignKey(Teacher, blank=True, null=True)
-    students = models.ManyToManyField(Student, blank=True, null=True)
+    students = models.ManyToManyField(Student, blank=True)
 
     def __unicode__(self):
         return self.name

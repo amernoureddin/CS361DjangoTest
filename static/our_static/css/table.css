@@ -1,0 +1,21 @@
+table, th, td {
+    border: 1px solid black;
+
+}
+
+table{
+    background-color: snow;
+}
+
+th {
+    color: crimson;
+
+}
+
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    color: royalblue;
+}

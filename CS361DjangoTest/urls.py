@@ -18,6 +18,9 @@ from django.conf.urls import url
 from django.contrib import admin
 # from django.conf.urls.defaults import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from CS361DjangoTest.views import hello, current_datetime
 from CS361DjangoTest.views import *
 
@@ -45,6 +48,9 @@ urlpatterns = [
     url(r'^addcourse/$', addcourse),
     url(r'^all-courses/$', all_courses),
     url(r'^enrollstudent/$', enrollstudent),
-    url(r'^all-c-f-s/(?P<code>.+)/$', all_courses_for_student)
+    url(r'^all-c-f-s/(?P<code>.+)/$', all_courses_for_student),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

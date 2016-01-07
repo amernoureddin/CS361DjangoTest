@@ -1,3 +1,17 @@
+{% load staticfiles %}
+<html>
+<head>
+<style>
+div {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    width: 300px;
+    border-radius: 25px;
+}
+</style>
+    <link rel="stylesheet" href="{% static  'css/round_corner.css' %}"/>
+
 </head>
 <body>
     <h1>Enroll Student To Courses</h1>
@@ -7,7 +21,7 @@
             Please correct the error{{ form.errors|pluralize }} below.
         </p>
     {% endif %}
-
+<div>
     <form action="" method="post">
         {% csrf_token %}
         <table>
@@ -15,5 +29,6 @@
         </table>
         <input type="submit" value="Submit">
     </form>
+    </div>
 </body>
 </html>

@@ -1,13 +1,22 @@
+{% load staticfiles %}
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}" />
     <title>The Student Courses</title>
 </head> 
 <body>
  <h1>The Student Courses</h1>
-{{ course.name }}/{{ course.code }}
- <ul> {% for i in course.students.all %} 
-    <li>{{ i.first_name }}{{ i.last_name }}</li> 
-{% endfor %} 
-</ul> 
+<table border="1" style="width:40%">
+  <tr>
+    <th>{{ course.name }}/{{ course.code }}</th>
+  </tr>
+
+        <ul> {% for i in course.students.all %} 
+        <tr>
+        <td>{{ i.first_name }}{{ i.last_name }}</td>
+        </tr>
+        {% endfor %} 
+        </ul> 
+
 </body>
 </html>

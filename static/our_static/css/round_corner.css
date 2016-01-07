@@ -1,0 +1,25 @@
+input{
+
+    border-radius: 8px;
+    border: 2px solid #73AD21;
+    padding: 0px;
+    width: 200px;
+    height: 25px;
+
+}
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    color: forestgreen;
+}
+
+div {
+    border: 2px solid #73AD21;
+    padding: 10px 40px;
+    background: lightgrey;
+    width: 300px;
+    border-radius: 25px;
+}
+

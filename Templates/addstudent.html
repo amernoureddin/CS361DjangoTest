@@ -1,3 +1,12 @@
+{% load staticfiles %}
+
+<html>
+<head>
+<style>
+
+</style>
+    <link rel="stylesheet" href="{% static  'css/round_corner.css' %}"/>
+
 </head>
 <body>
     <h1>Add Student</h1>
@@ -7,13 +16,17 @@
             Please correct the error{{ form.errors|pluralize }} below.
         </p>
     {% endif %}
-
+    <div>
     <form action="" method="post">
         {% csrf_token %}
         <table>
+
             {{ form.as_table }}
+
         </table>
+
         <input type="submit" value="Submit">
     </form>
+    </div>
 </body>
 </html>

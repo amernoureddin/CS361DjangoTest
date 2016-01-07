@@ -1,14 +1,34 @@
+{% load staticfiles %}
 <html>
 <head>
+
+<link rel="stylesheet" href="{% static 'css/table.css' %}" />
+
+
     <title>Courses</title>
 </head> 
 <body>
  <h1>Courses</h1>
+<table border="1" style="width:60%">
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Classroom</th>
+      <th>Times</th>
+      <th>Teacher</th>
+  </tr>
  <ul> {% for course in course_list %} 
+  <tr>
+    <td>{{ course.name }}</td>
+    <td>{{ course.code }}</td>
+    <td>{{ course.classroom }}</td>
+    <td>{{ course.times }}</td>
+    <td>{{ course.teacher }}</td>
+  </tr>
 
-    <li><b>Name:</b>{{ course.name }}||<b>Code:</b> {{ course.code }}||
-        <b>Classroom:</b>{{ course.classroom }}||<b>Times:</b>{{ course.times }}||<b>Teacher:</b>{{ course.teacher }}</li> 
 {% endfor %} 
 </ul> 
+</table>
+
 </body>
 </html>
